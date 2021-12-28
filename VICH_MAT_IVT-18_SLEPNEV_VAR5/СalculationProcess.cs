@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace VICH_MAT_IVT_18_SLEPNEV_VAR5
+﻿namespace VICH_MAT_IVT_18_SLEPNEV_VAR5
 {
     /// <summary>
     /// Процесс вычисления разными методами

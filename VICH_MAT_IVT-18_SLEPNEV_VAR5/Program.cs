@@ -1,27 +1,7 @@
-﻿//using System;
-//using System.Collections.Generic;
-//using System.Linq;
-//using System.Text;
-//using System.Threading.Tasks;
-
-//namespace VICH_MAT_IVT_18_SLEPNEV_VAR5
-//{
-//    class Program
-//    {
-//        static void Main(string[] args)
-//        {
-//        }
-//    }
-//}
-
-using System;
-using System.Collections.Generic;
+﻿using System;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using VICH_MAT_IVT_18_SLEPNEV_VAR5;
 
-namespace ConsoleApp2
+namespace VICH_MAT_IVT_18_SLEPNEV_VAR5
 {
     class Program
     {
@@ -29,14 +9,14 @@ namespace ConsoleApp2
         {
             // Ввод базовых значений
             Console.WriteLine(
-            "                                 Вариант №5\n"+
+            "                                 Вариант №5\n" +
             "Вычислить приближенные значения интеграла методом трапеций и методом Симпсона в соот-\n" +
             "ветствии с вариантом. Результаты сравнить с точным значением интеграла и между собой.\n" +
             "-------------------------------------------------------------------------------------\n" +
             "                       1\n" +
             "Функция   y(x) = -------------\n" +
-            "                  ln(1 + x^2)\n" +
-            "Введите a = ");
+            "                  ln(1 + x^2)\n");
+            Console.Write("Введите a = ");
             double a = Convert.ToDouble(Console.ReadLine());
             Console.Write("Введите b = ");
             double b = Convert.ToDouble(Console.ReadLine());
@@ -54,7 +34,7 @@ namespace ConsoleApp2
                 x[i] = x[i - 1] + h;
                 y[i] = y[0] = 1 / (Math.Log(1 + Math.Pow(x[i], 2)));
             }
-            
+
             // Формирование таблицы
             Console.WriteLine(
                 "\n-----------------------------------------------------------------\n" +
