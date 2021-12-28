@@ -19,6 +19,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using VICH_MAT_IVT_18_SLEPNEV_VAR5;
 
 namespace ConsoleApp2
 {
@@ -66,8 +67,11 @@ namespace ConsoleApp2
                     "|\t" + i + "\t|\t" + x[i] + "\t|\t" + y[i] + "\t|");
             }
             Console.WriteLine("----------------------------------------------------------------- \n");
-            
-            
+
+            // Вычисление методом трапеции
+            double tapeziumMethod = СalculationProcess.TapeziumMethod(y, h);
+            Console.WriteLine($"Метод трапеции = {tapeziumMethod}");
+
             Console.Read();
         }
     }
