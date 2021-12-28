@@ -47,7 +47,6 @@ namespace ConsoleApp2
             double[] x = new double[n + 1];
             x[0] = a;
 
-
             // Вычислениие функция
             y[0] = 1 / (Math.Log(1 + Math.Pow(x[0], 2)));
             for (int i = 1; i <= n; i++)
@@ -55,10 +54,10 @@ namespace ConsoleApp2
                 x[i] = x[i - 1] + h;
                 y[i] = y[0] = 1 / (Math.Log(1 + Math.Pow(x[i], 2)));
             }
-            Console.WriteLine();
+            
             // Формирование таблицы
             Console.WriteLine(
-                "-----------------------------------------------------------------\n" +
+                "\n-----------------------------------------------------------------\n" +
                 "|\ti\t|\t x \t|\t        y        \t|");
             for (int i = 0; i <= n; i++)
             {
@@ -71,6 +70,10 @@ namespace ConsoleApp2
             // Вычисление методом трапеции
             double tapeziumMethod = СalculationProcess.TapeziumMethod(y, h);
             Console.WriteLine($"Метод трапеции = {tapeziumMethod}");
+
+            // Вычисление методом Симпсона
+            double simpsonsMethod = СalculationProcess.SimpsonsMethod(y, h);
+            Console.WriteLine($"Метод Симпсона = {simpsonsMethod}");
 
             Console.Read();
         }

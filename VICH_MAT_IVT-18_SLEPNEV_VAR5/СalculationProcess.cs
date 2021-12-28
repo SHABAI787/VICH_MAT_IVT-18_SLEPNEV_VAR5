@@ -28,5 +28,25 @@ namespace VICH_MAT_IVT_18_SLEPNEV_VAR5
 
             return result;
         }
+
+        /// <summary>
+        /// Вычисление методом Симпсона
+        /// </summary>
+        public static double SimpsonsMethod(double[] y, double h)
+        {
+            double result = 0;
+            double ms1 = 0;
+            for (int i = 1; i < y.Length - 1; i = i + 2)
+            {
+                ms1 = ms1 + y[i];
+            }
+            double ms2 = 0;
+            for (int i = 2; i < y.Length - 1; i = i + 2)
+            {
+                ms2 = ms2 + y[i];
+            }
+            result = h / 3 * (y[0] + 4 * ms1 + 2 * ms2 + y[y.Length - 1]);
+            return result;
+        }
     }
 }
