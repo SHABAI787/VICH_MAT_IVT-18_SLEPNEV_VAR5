@@ -69,11 +69,27 @@ namespace ConsoleApp2
 
             // Вычисление методом трапеции
             double tapeziumMethod = СalculationProcess.TapeziumMethod(y, h);
-            Console.WriteLine($"Метод трапеции = {tapeziumMethod}");
-
+            // Вычисление методом среднего прямоугольника
+            double middleRectangleMethod = СalculationProcess.MiddleRectangleMethod(y, h, n);
             // Вычисление методом Симпсона
             double simpsonsMethod = СalculationProcess.SimpsonsMethod(y, h);
-            Console.WriteLine($"Метод Симпсона = {simpsonsMethod}");
+
+            // Вывод
+            Console.WriteLine(
+                $"Метод трапеции = {tapeziumMethod}\n" +
+                $"Метод среднего прямоугольника = {middleRectangleMethod}\n" +
+                $"Метод Симпсона = {simpsonsMethod}");
+
+            // Проверка расхождений значений
+            if (tapeziumMethod != simpsonsMethod || tapeziumMethod != middleRectangleMethod
+                || simpsonsMethod != middleRectangleMethod)
+            {
+                double[] masResult = new double[] { tapeziumMethod, simpsonsMethod, middleRectangleMethod };
+                Console.WriteLine($"\nИмеются расхождения в точности значений:\n" +
+                    $"Мин.значение = {masResult.Min()}\n" +
+                    $"Макс.значение = {masResult.Max()}\n" +
+                    $"Погрешность = {masResult.Max() - masResult.Min()}\n");
+            }
 
             Console.Read();
         }

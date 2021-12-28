@@ -35,6 +35,7 @@ namespace VICH_MAT_IVT_18_SLEPNEV_VAR5
         public static double SimpsonsMethod(double[] y, double h)
         {
             double result = 0;
+
             double ms1 = 0;
             for (int i = 1; i < y.Length - 1; i = i + 2)
             {
@@ -46,6 +47,23 @@ namespace VICH_MAT_IVT_18_SLEPNEV_VAR5
                 ms2 = ms2 + y[i];
             }
             result = h / 3 * (y[0] + 4 * ms1 + 2 * ms2 + y[y.Length - 1]);
+            return result;
+        }
+
+        /// <summary>
+        /// Вычисление методом среднего прямоугольника
+        /// </summary>
+        public static double MiddleRectangleMethod(double[] y, double h, int n)
+        {
+            double result = 0;
+
+            double mp = 0;
+            for (int i = 0; i < n; i++)
+            {
+                mp = mp + y[i];
+            }
+            result = mp * h;
+
             return result;
         }
     }
